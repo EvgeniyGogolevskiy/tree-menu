@@ -1,9 +1,9 @@
 {% load menuapp_tags %}
-<a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
-{% if menu_item.children %}
-<details {% if menu_item.id in unwrapped_menu_item_ids %} open {% endif %}>
+<a href="{{ menu.url }}">{{ menu.title }}</a>
+{% if menu.children %}
+<details {% if menu.id in menu_item_ids %} open {% endif %}>
     <summary></summary>
-    {% for child in menu_item.children %}
+    {% for child in menu.children %}
     <div class="menu_item">
         {% draw_menu_item_children child.id %}
     </div>
